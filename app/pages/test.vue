@@ -14,10 +14,13 @@ const fetchManagerAgentFsData = async () => {
       throw new Error(`HTTP Error! Response status: ${managerAgentResponse.status.value}`);
     }
 
-    console.log(managerAgentResponse.data)
+    console.log(managerAgentResponse.data.value)
 
   } catch (error: any) {
     console.error('Fetch operation failed:', error.message);
+	return null
+  } finally {
+	console.log('Finished calling FS API')
   }
 
 }
@@ -25,7 +28,6 @@ fetchManagerAgentFsData();
 </script>
 
 <template>
-	<div>
-		<p>Test Page</p>
-	</div>
+  <RouterView v-slot="{ Component }">
+  </RouterView>
 </template>

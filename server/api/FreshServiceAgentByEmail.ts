@@ -1,7 +1,7 @@
 // function to get FreshService Agent data with matching email from request param
 export default defineEventHandler(async (event) => {
     const query = getQuery(event),
-        runtimeConfig = useRuntimeConfig(),
+        runtimeConfig = useRuntimeConfig(event),
         email = query.email;
 
     try {

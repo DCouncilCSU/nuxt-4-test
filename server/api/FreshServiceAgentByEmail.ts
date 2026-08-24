@@ -18,9 +18,10 @@ export default defineEventHandler(async (event) => {
 
         let data = await response.json()
         
-        return data;
+        return { success: true, data: data};
     } catch (err: any) {
         console.log(err.message)
+        return { success: false, error: 'blah failed' }
     } finally {
         console.log('done in the function');
     }

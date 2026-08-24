@@ -18,9 +18,9 @@ const fetchManagerAgentFsData = async () => {
 
   } catch (error: any) {
     console.error('Fetch operation failed:', error.message);
-	return null
+	  return null;
   } finally {
-	console.log('Finished calling FS API')
+	  console.log('Finished calling FS API')
   }
 
 }
